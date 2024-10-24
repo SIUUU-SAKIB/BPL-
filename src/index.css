@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer components {
+     .open {
+        @apply w-[40px] absolute top-6 right-8 cursor-pointer ;
+     }
+     
+}
