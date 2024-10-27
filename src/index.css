@@ -6,5 +6,10 @@
      .open {
         @apply w-[40px] absolute top-6 right-8 cursor-pointer ;
      }
-     
+     .hov {
+      @apply bg-gradient-to-r from-cyan-500 to-blue-500 
+     }
+     .clicked {
+      @apply bg-slate-400
+     }
 }
