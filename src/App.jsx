@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import Footer from "./Footer";
+
 const players = [
   {
     name: "Rohit Sharma",
@@ -105,7 +106,7 @@ const App = () => {
       <Navbar coin={coin} />
       <Hero use={use} selected={selected} />
       <Body selected={selected} select={select} />
-      <Footer/>
+      <Footer />
     </div>
   );
 };
@@ -195,7 +196,7 @@ const Hero = (props) => {
 const Body = ({ select, selected }) => {
   return (
     <>
-      <div className="flex justify-between w-full items-center py-2" >
+      <div className="flex justify-between w-full items-center py-2">
         <p className="text-xl font-bold">Available Players</p>
 
         <div className="flex ">
@@ -212,40 +213,51 @@ const Body = ({ select, selected }) => {
           <Cards key={pl.id} player={pl} select={select} />
         ))}
       </div>
-      <Hidden/>
+      <Hidden />
     </>
   );
 };
-let name, img, type
-function handleClick(event) {
-   name = event.target.closest(".card").children[1].innerText
-    img = event.target.closest(".card").children[0].childNodes[0].src
-    type = event.target.closest(".card").children[5].lastChild.innerText
-}
+let name, img, type;
 
-function Hidden () {
+const obj = [
+  {
+    name: name,
+    img: img,
+    type: type,
+  },
+];
+
+console.log(sel)
+console.log(sel)
+function Hidden() {
+  let sel;
+function handleClick(event) {
+ let name = event.target.closest(".card").children[1].innerText;
+ let img = event.target.closest(".card").children[0].childNodes[0].src;
+ let type = event.target.closest(".card").children[5].lastChild.innerText;
+   sel = [{ name: name }, { img: img }, { type: type }];
+}
   return (
     <div className="w-full mx-auto px-8 py-4 flex items-center justify-between gap-4 border mt-4 rounded-xl">
-    <div className="flex gap-2 items-center justify- between">
-      <div className="one flex gap-2 justify-center items-center">
-        <img src={img} className="h-[100px] w-[] object-fit rounded-xl"/>
-        <div className="flex flex-col">
-          <h1 className="font-bold text-xl">{name}</h1>
-          <p>{type}</p>
+      <div className="flex gap-2 items-center justify- between">
+        <div className="one flex gap-2 justify-center items-center">
+          <img src={img} className="h-[100px] w-[] object-fit rounded-xl" />
+          <div className="flex flex-col">
+            <h1 className="font-bold text-xl">{name}</h1>
+            <p>{type}</p>
+          </div>
         </div>
       </div>
+      <p>🗑️</p>
     </div>
-    <p>🗑️</p>
-    </div>
-  )
+  );
 }
 
+
 const Cards = ({ player, select }) => {
+
   const [btnClicked, useClicked] = useState(0);
-  const clicked = () => {
-    useClicked(btnClicked + 1);
-  };
- 
+  const clicked = () => useClicked(btnClicked + 1);
   return (
     <>
       <div className="card flex flex-col p-2 items-start justify-center gap-4 max-w-[520px] border-[0.1px] border-blue-100 rounded-lg shadow-sm">
@@ -271,7 +283,9 @@ const Cards = ({ player, select }) => {
         <p className="font-bold text-md text-black">{player.rating}</p>
         <div className="flex justify-between items-center w-full">
           <p className="font-bold text-md">Type</p>
-          <p className="font-light text-slate-600 text-md">Right-Hand-Bat</p>
+          <p className="font-light text-slate-600 text-md">
+            {player.player_type}
+          </p>
         </div>
 
         <div className="flex justify-between items-center w-full">
@@ -279,7 +293,7 @@ const Cards = ({ player, select }) => {
           <button
             className="font-ligh text-sm font-bold border p-2 border-none rounded-3xl transition duration-300 cursor-pointer bg-gradient-to-r from-violet-600 to-indigo-600 hover:hov  text-white hover:text-black"
             onClick={(e) => {
-              select(), clicked(), handleClick(e);
+              select(), clicked(),handleClick(e);
             }}
           >
             Choose Player
