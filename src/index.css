@@ -12,4 +12,14 @@
      .clicked {
       @apply bg-slate-400
      }
+     .cl {
+      @apply bg-gradient-to-r from-violet-600 to-indigo-600  hover:bg-gradient-to-r from-cyan-500 to-blue-500 hover:text-black;
+     }
+     .color { 
+      @apply text-black;
+     }
+   
+     .toastBody { 
+      @apply text-black;
+     }
 }

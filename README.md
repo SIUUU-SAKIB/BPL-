@@ -1,8 +1,4 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Name : Choose your Squad for next war.
+Description: Here you can choose your team as per you preferences and play cool mathes.
+Technology use: React, Vite, TailwindCss, Toastify.
+Features: (1)You can claim reward once you login your account. (2) App is free to use (3) Compatable to any browser.
